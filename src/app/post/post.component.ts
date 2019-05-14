@@ -37,4 +37,14 @@ export class PostComponent implements OnInit {
     console.log(this.postPoint)
   }
 
+  getColor() {
+    if(this.postPoint < 0) {
+      return 'red'; 
+    } else if(this.postPoint > 0) {
+      return 'green';
+    } else if(this.postPoint == 0) {
+      return'blue'; 
+    }
+  }
+
 }
