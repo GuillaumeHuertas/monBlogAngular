@@ -7,6 +7,16 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class PostComponent implements OnInit {
 
+  lastUpdate = new Promise((resolve, reject)=> {
+    const date = new Date(); 
+    setTimeout(
+      () => {
+        resolve(date);
+      }, 2000
+    );
+  });
+  
+
   @Input() postTitle: String;
   @Input() postBody: String; 
   

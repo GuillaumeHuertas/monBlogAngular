@@ -1,21 +1,23 @@
 <li [ngClass]="{'list-group-item': true,
                 'list-group-item-success': postPoint > '0',
                 'list-group-item-danger': postPoint < '0'}">
-  
+
   <h4 [ngStyle]="{color: getColor()}">Titre : {{ postTitle }}</h4>
-  <b>{{ getBody() }}</b>
-  <br/>
-  <button class="btn1 btn-success" id="toto"
-                  (click)="addPoint()">J'aime</button>
-  <button class="btn2 btn-danger" id="toto"
-                  (click)="suppPoint()">Je n'aime pas</button>
- <input type="text" class="form-control" [(ngModel)]="postTitle">   
- <input type="text" class="form-control" [(ngModel)]="postBody"> 
-  <div style="width:20px;height:20px;background-color:green"
-        *ngIf="postPoint > 0"></div>   
-  <div style="width:20px;height:20px;background-color:blue;border-radius: 20px"
-        *ngIf="postPoint == 0"></div>  
+  <p id="laDate">Mis à jour : {{ lastUpdate | async | date }}</p>
+  <p>{{ getBody() }}</p>
+  <br />
+  <p>Modifier Titre : </p>
+  <input type="text" class="form-control" [(ngModel)]="postTitle">
+  <p>Modifier Paragraphe : </p>
+  <input type="text" class="form-control" [(ngModel)]="postBody">
+  <button id="aime" class="btn1 btn-success" (click)="addPoint()">J'aime</button>
+  <button id="aimePas" class="btn2 btn-danger" (click)="suppPoint()">Je n'aime pas</button>
+  <br />
+  <div style="width:20px;height:20px;background-color:green" 
+        *ngIf="postPoint > 0"></div>
+  <div style="width:20px;height:20px;background-color:blue;border-radius: 20px" 
+        *ngIf="postPoint == 0"></div>
   <div style="width:0px;height:0px;border-style:solid;border-width:0 10px 15px 10px; 
-  border-color: transparent transparent red transparent"
-        *ngIf="postPoint < 0"></div>       
+  border-color: transparent transparent red transparent" 
+        *ngIf="postPoint < 0"></div>
 </li>
