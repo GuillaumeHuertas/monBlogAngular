@@ -7,10 +7,21 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   
-  postOne = 'Le premier jour';
-  postTwo= 'Le deuxième jour'; 
-  postThree= 'Le troisième'; 
-
+  posts = [
+    {
+      title: 'Le premier jour',
+      body: 'lalalala'
+    },
+    {
+      title: 'le deuxième jour',
+      body: 'lilililili'
+    },
+    {
+      title: 'le troisième jour',
+      body: 'lolololololo'
+    }
+  ];
+  
   constructor() {};
   
 }
